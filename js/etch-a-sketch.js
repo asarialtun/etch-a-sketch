@@ -43,6 +43,7 @@ $(document).ready(function() {
         $('#wrapper').append($('.lineBox').clone().removeClass('lineBox').addClass('lineBoxed'));
       }
       $('.lineBox').removeClass('lineBox').addClass('lineBoxed');
+      $('.lineBoxed').css("height", boxSize+1); 
     }
 
   function startDrawing()

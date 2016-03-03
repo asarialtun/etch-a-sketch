@@ -4,9 +4,6 @@
     border-style:solid;
     display:inline-block;
     border-width:1px;
-    border-top:1px;
-    border-bottom:1px;
-    margin-top:0px;
 }
 
 .redbox{
@@ -16,7 +13,4 @@
     border-style:solid;
     display:inline-block;
     border-width:1px;
-    border-top:1px;
-    border-bottom:1px;
-    margin-top:0px;
 }
