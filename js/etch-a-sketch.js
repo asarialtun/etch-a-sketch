@@ -1,38 +1,33 @@
-var size = 5;
+var size = 16;
 $(document).ready(function() {
 	var boxSize=getBoxSize(size);
   var box = defineBox(boxSize);
   createGrid(box,boxSize);
+  startDrawing();
   
   function defineBox(boxSize){
   	var box = document.createElement('div');
-    box.style.backgroundColor="black";
     box.style.height=boxSize+"px";
     box.style.width=boxSize+"px";
-    box.style.borderColor="white";
-    box.style.borderStyle="solid";
-    box.style.display="inline-block";
-    box.style.borderWidth="1px";
-    box.style.borderTop="1px"
-    box.style.borderBottom="1px"
-    box.style.marginTop="0px";
-    box.className="box";
+    box.className="box";    
     return box;
   }
   
   function getBoxSize(size) {
-  	var boxSize=1000/size;
+  	var boxSize=640/size;
     return boxSize;
   }
   
   $("button#btn_setSize").on("click", function() {
-    do
-    {
-  	size=prompt("Enter a number up to 64");
-    }while(size<=0||size>64||isNaN(size))
+    
+    do{
+  	   size=prompt("Enter a number up to 64");
+      }while(size<=0||size>64||isNaN(size))
+
     boxSize=getBoxSize(size);
     box=defineBox(boxSize);
     createGrid(box,boxSize);
+    startDrawing();
   });
 
   function createGrid(box,boxSize){
@@ -49,5 +44,21 @@ $(document).ready(function() {
       }
       $('.lineBox').removeClass('lineBox').addClass('lineBoxed');
     }
+
+  function startDrawing()
+  { 
+    $('.box').mouseenter(function(){
+    $(this).removeClass('box').addClass('redbox');
+    console.log("Mouse enter a div");
+  }
+    );
+
+  $('.box').mouseleave(function(){
+    console.log("Mouse leave a div");
+  }
+    );
+}
+
+
   }
 );
