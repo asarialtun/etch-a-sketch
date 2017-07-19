@@ -1,0 +1,14 @@
+.cell{
+    background-color: grey;
+ 	float:left;
+ 	border-color:white;
+ 	display:table;
+ 	text-align: center;
+}
+
+.numberText{
+	display: table-cell;
+    vertical-align: middle;
+	color:white;
+	font-size: 3vw;
+}
